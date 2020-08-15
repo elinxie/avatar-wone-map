@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./resources/css/index.css">
+</head>
+<body>
+    <!-- navbar section -->
+    <nav class="navbar">
+        <ul>
+            <li><a class="blue" href="index.html">Profile</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="usMapPopup.html">Campus Landing Banner</a></li>
+            <li><a href="campusMap1.html">campusMap</a></li>
+        </ul>
+    </nav>
+
+    <!-- interactive map version 1 -->
+    <div>
+        <img id="campusMap1" src="./resources/images/jeffersonCCMap.jpg" alt="JeffersonCC" usemap="#campusmap">
+        <map name="campusmap">
+            <area class="area" alt="student center" title="student center" href="" coords="1017,629,108" shape="circle">
+            <area class="area" alt="library" title="library" href="index.html" coords="814,942,89" shape="circle">
+            <area class="area" alt="classes" title="classes" href="javascript:win('index.html')" coords="517,743,96" shape="circle">
+        </map>  
+    </div>
+    <div>
+        <h1>Create an image map at <a href="https://imagemap.org/">imagemap.org</a></h1>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./resources/js/jquery.rwdImageMaps.min.js"></script>
+    <script>
+        $('img[usemap]').rwdImageMaps()
+        function win(fileName) {
+            myFloater = window.open('','myWindow','scrollbars=no,status=no,width=300,height=300')
+            myFloater.location.href = fileName;
+        };
+    </script>
+</body>
+</html>
